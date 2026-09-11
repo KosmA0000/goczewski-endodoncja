@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --color-ink: #101214;
+  --color-ink-soft: #40454C;
+  --color-ink-dim: #767C85;
+  --color-paper: #F5F5F3;
+  --color-paper-alt: #EBEBE8;
+  --color-line: #D6D6D2;
+  --color-signal: #C4321A;
+  --color-signal-active: #98250F;
+}
+
+@layer base {
+  html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F5F5F3;
+    color: #101214;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  p, li, address {
+    text-wrap: pretty;
+  }
+
+  h1, h2 {
+    text-wrap: balance;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #EBEBE8;
+}
+::-webkit-scrollbar-thumb {
+  background: #101214;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C4321A;
+}

@@ -1,0 +1,9 @@
+Lead #10 — Indywidualna Praktyka Stomatologiczna (PDF) / faktyczna nazwa na stronie: Prywatna Praktyka Stomatologiczna dr n. med. Maciej Goczewski
+Miasto: Pruszcz Gdański, ul. Okrzei 4
+Telefon: +48 (58) 683 22 71 / kom. +48 609 460 474
+Email: gabinet@goczewski.pl
+Oryginalna strona: https://goczewski.pl
+Nowa strona (hostowana lokalnie): http://localhost:8899/
+Folder: sites/10-donatt/site/
+
+Uwaga: nazwisko w leadzie (Michal Donatt) nie zgadza się z nazwiskiem na stronie (Maciej Goczewski) — praktyka pod tym adresem/domeną działa pod innym lekarzem niż w PDF, ale to nadal aktywny, działający gabinet stomatologiczny (endodoncja/mikroskop, treść aktualna).
