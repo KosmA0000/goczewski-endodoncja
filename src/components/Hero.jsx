@@ -3,7 +3,7 @@ import { Phone, Mail, Microscope } from "lucide-react";
 import gsap from "gsap";
 import { clinic, hero } from "../data/clinicData";
 import { useInView, MaskedHeading, FadeUp } from "./Reveal";
-import heroImg from "../assets/gallery/poczekalnia-01.jpg";
+import heroImg from "../assets/gallery/gabinet-01.jpg";
 
 export default function Hero() {
   const sectionRef = useRef(null);
