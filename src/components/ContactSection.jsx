@@ -1,35 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { CalendarCheck, CheckCircle2, Globe } from "lucide-react";
 import { MaskedHeading, StaggerReveal } from "./Reveal";
 import { clinic, umowWizyte } from "../data/clinicData";
 
 export default function ContactSection() {
   const mapQuery = encodeURIComponent(clinic.ulica + " " + clinic.kod);
-
-  const [mapConsent, setMapConsent] = useState(false);
-
-  useEffect(() => {
-    const readConsent = () => {
-      try {
-        setMapConsent(localStorage.getItem("goczewski_cookie_consent") === "all");
-      } catch {
-        setMapConsent(false);
-      }
-    };
-    readConsent();
-    window.addEventListener("goczewski-cookie-consent", readConsent);
-    return () => window.removeEventListener("goczewski-cookie-consent", readConsent);
-  }, []);
-
-  const acceptMapCookies = () => {
-    try {
-      localStorage.setItem("goczewski_cookie_consent", "all");
-    } catch {
-      // ignore
-    }
-    setMapConsent(true);
-    window.dispatchEvent(new CustomEvent("goczewski-cookie-consent"));
-  };
 
   return (
     <section id="kontakt" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F6F5F1]">
@@ -108,31 +83,6 @@ export default function ContactSection() {
           >
             Nawiguj w Google Maps
           </a>
-        </div>
-
-        <div className="mt-4 rounded-3xl overflow-hidden border border-[#3F6B52]/[0.14] bg-[#E7EDE8] shadow-sm">
-          {mapConsent ? (
-            <iframe
-              title="Mapa dojazdu — Prywatna Praktyka Stomatologiczna"
-              src={"https://www.google.com/maps?q=" + mapQuery + "&output=embed"}
-              className="w-full h-[360px] sm:h-[420px] border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          ) : (
-            <div className="w-full h-[280px] sm:h-[420px] flex flex-col items-center justify-center gap-3 text-center px-6">
-              <p className="text-xs sm:text-sm text-[#16211C]/70 max-w-sm">
-                Mapa Google zapisuje własne pliki cookie, dlatego ładuje się dopiero po Twojej zgodzie.
-              </p>
-              <button
-                type="button"
-                onClick={acceptMapCookies}
-                className="px-5 py-2.5 rounded-full bg-[#3F6B52] text-white text-xs uppercase tracking-wider font-semibold hover:bg-[#345A44] transition-colors shadow-sm cursor-pointer"
-              >
-                Pokaż mapę
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </section>

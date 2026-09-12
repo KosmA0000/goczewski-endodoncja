@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import CookieConsent from "./components/CookieConsent";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
@@ -31,8 +30,6 @@ export default function App() {
 
   return (
     <>
-      <CookieConsent />
-
       <div className="text-[#16211C] font-sans antialiased selection:bg-[#3F6B52] selection:text-white flex flex-col relative z-10 overflow-x-clip">
         <Navbar />
 
