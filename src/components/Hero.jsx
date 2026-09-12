@@ -76,52 +76,36 @@ export default function Hero() {
           {hero.tytul}
         </MaskedHeading>
 
-        <FadeUp delay={0.15} className="mt-6 sm:mt-7 grid sm:grid-cols-[auto_1fr] gap-3 max-w-3xl">
-          <div className="flex flex-col gap-3">
+        <FadeUp delay={0.15} className="mt-6 sm:mt-7 flex flex-col gap-3 max-w-md">
+          <a
+            href={clinic.telefonHref}
+            className="group rounded-3xl bg-[#3F6B52] hover:bg-[#345A44] text-white transition-all duration-300 p-5 sm:p-6 flex flex-col justify-center items-start gap-2 min-w-0 shadow-lg hover:shadow-xl hover:scale-[1.01]"
+          >
+            <div className="flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-[#A8C9B4]">
+              <Phone className="w-3.5 h-3.5" strokeWidth={2} />
+              <span>Rejestracja telefoniczna</span>
+            </div>
+            <span className="font-serif text-xl sm:text-2xl text-white leading-tight tabular-nums font-medium">
+              {clinic.telefon}
+            </span>
+          </a>
+
+          <div className="grid grid-cols-2 gap-2">
             <a
-              href={clinic.telefonHref}
-              className="group rounded-3xl bg-[#3F6B52] hover:bg-[#345A44] text-white transition-all duration-300 p-5 sm:p-6 flex flex-col justify-center items-start gap-2 min-w-0 shadow-lg hover:shadow-xl hover:scale-[1.01]"
+              href={"mailto:" + clinic.email}
+              className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#A8C9B4] transition-colors p-3.5 flex items-center gap-2 min-w-0"
             >
-              <div className="flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-[#A8C9B4]">
-                <Phone className="w-3.5 h-3.5" strokeWidth={2} />
-                <span>Rejestracja telefoniczna</span>
-              </div>
-              <span className="font-serif text-xl sm:text-2xl text-white leading-tight tabular-nums font-medium">
-                {clinic.telefon}
-              </span>
+              <Mail className="w-4 h-4 text-[#A8C9B4] shrink-0" strokeWidth={1.6} />
+              <span className="text-xs text-[#F6F5F1]/90 truncate">{clinic.email}</span>
             </a>
 
-            <div className="grid grid-cols-2 gap-2">
-              <a
-                href={"mailto:" + clinic.email}
-                className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#A8C9B4] transition-colors p-3.5 flex items-center gap-2 min-w-0"
-              >
-                <Mail className="w-4 h-4 text-[#A8C9B4] shrink-0" strokeWidth={1.6} />
-                <span className="text-xs text-[#F6F5F1]/90 truncate">{clinic.email}</span>
-              </a>
-
-              <a
-                href="#o-mnie"
-                className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#A8C9B4] transition-colors p-3.5 flex items-center gap-2 min-w-0"
-              >
-                <Microscope className="w-4 h-4 text-[#A8C9B4] shrink-0" strokeWidth={1.6} />
-                <span className="text-xs text-[#F6F5F1]/90 truncate">Endodoncja mikroskopowa</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-5 sm:p-6">
-            <div className="mb-4">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-[#A8C9B4] font-semibold">Gabinet od 1999</p>
-            </div>
-            <div className="grid gap-2">
-              <div className="rounded-2xl bg-[#16211C]/50 border border-white/10 px-3.5 py-2.5 text-[13px] text-[#F6F5F1]/90 leading-snug">
-                {hero.akapity[2]}
-              </div>
-              <div className="rounded-2xl bg-[#16211C]/50 border border-white/10 px-3.5 py-2.5 text-[13px] text-[#F6F5F1]/90 leading-snug">
-                Jestem także autorem publikacji naukowych oraz licznych wykładów zagranicznych z zakresu stomatologii mikroskopowej i endodoncji.
-              </div>
-            </div>
+            <a
+              href="#o-mnie"
+              className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#A8C9B4] transition-colors p-3.5 flex items-center gap-2 min-w-0"
+            >
+              <Microscope className="w-4 h-4 text-[#A8C9B4] shrink-0" strokeWidth={1.6} />
+              <span className="text-xs text-[#F6F5F1]/90 truncate">Endodoncja mikroskopowa</span>
+            </a>
           </div>
         </FadeUp>
       </div>
